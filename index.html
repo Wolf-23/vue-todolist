@@ -14,16 +14,16 @@
                 <input type="text" v-model="itemToDo" @keyup.enter="aggiungiItem()">
                 <button @click="aggiungiItem()">Aggiungi alla lista</button>
             </div>
-                <div class="list-container">
-                    <ul>
-                        <li v-for="(todo, index) in toDos" v-if="!todo.text == ''">
-                            <span id="text" :class="todo.done?'through':''" @click="todo.done = (todo.done == false?true:false)">{{todo.text}}</span>
-                            <span id="icon" @click="eliminaItem(index)">
-                                <i class="fa-solid fa-circle-xmark"></i>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
+            <div class="list-container">
+                <ul>
+                    <li v-for="(todo, index) in toDos" v-if="!todo.text == ''">
+                        <span id="text" :class="todo.done?'through':''" @click="todo.done = (todo.done == false?true:false)">{{todo.text}}</span>
+                        <span id="icon" @click="eliminaItem(index)">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </span>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!-- Script JS -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
