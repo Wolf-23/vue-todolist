@@ -16,23 +16,18 @@ const app = new Vue({
                 done: false,
             },
         ],
-        pushObject:
-            {
-                text: this.itemToDo,
-                done: false,
-            },
     },
     methods: {
         eliminaItem(index) {
             this.toDos.splice(index, 1);
         },
         aggiungiItem() {
-           this.toDos.push(this.pushObject);
+          let newObject = {
+            text: this.itemToDo,
+            done: false,
+          };
+          this.toDos.push(newObject);
+          this.itemToDo = '';
         },
-        addThrough() {
-            if (this.toDos.done == false) {
-                this.toDos.done =
-            }
-        }
     }
   })
