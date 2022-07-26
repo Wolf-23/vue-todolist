@@ -22,12 +22,14 @@ const app = new Vue({
             this.toDos.splice(index, 1);
         },
         aggiungiItem() {
-          let newObject = {
-            text: this.itemToDo,
-            done: false,
-          };
-          this.toDos.push(newObject);
-          this.itemToDo = '';
+            if (this.itemToDo.trim().length > 0) {
+                let newObject = {
+                    text: this.itemToDo.trim(),
+                    done: false,
+                };
+                this.toDos.push(newObject);
+                this.itemToDo = '';
+            }
         },
     }
   })
